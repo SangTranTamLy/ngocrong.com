@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Ngọc Rồng Online</title>
+</head>
+<body>
+<div class="wrapper">
+    <nav class="nav"> 
+        <div class="nav-logo">
+            <p>NRO</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul><!--Tao html moi de lien ket 4 tap-->
+                <li><a href="index.html" class="link active">Trang Chủ</a></li>
+                <li><a href="About.html" class="link">Giới Thiệu</a></li>
+                <li><a href="forum.html" class="link">Diễn Đàn</a></li>
+                <li><a href="fanpage.html" class="link">Fanpage</a></li>
+            </ul>
+        </div>
+        <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+        </div>
+    </nav>
+</div>
+
+<script>
+    function myMenuFunction() {
+        var i = document.getElementById("navMenu");
+
+        if (i.className === "nav-menu") {
+            i.className += " responsive";
+        } else {
+            i.className = "nav-menu";
+        }
+    }
+
+    var a = document.getElementById("loginBtn");
+    var b = document.getElementById("registerBtn");
+    var c = document.getElementById("login");
+    var d = document.getElementById("register");
+
+    function login() {
+        // Kiểm tra nếu trang hiện tại không phải là "Diễn Đàn"
+        if (window.location.pathname !== '/forum.html') {
+            window.location.href = 'forum.html';
+            return;
+        }
+
+        // Mã cũ
+        c.style.left = "4px";
+        d.style.right = "-520px";
+        a.className += " white-btn";
+        b.className = "btn";
+        c.style.opacity = 1;
+        b.style.opacity = 0;
+    }
+</script>
+
+</body>
+</html>
